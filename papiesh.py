@@ -2,14 +2,12 @@ import datetime as dt
 import threading
 from time import sleep
 
-
 def papiesh(cls: type):
     """
-    Created by Mikhail Bialkov
+    Created By Mikhail Bialkov
     :param cls:
     :return:
     """
-    rozum_i_godnosc_czlowieka = """Jan Pawel II byl wielkim polakiem"""
 
     class Jp2(cls):
         instances = {}
@@ -20,7 +18,8 @@ def papiesh(cls: type):
                 sleep(1)
             for ins in Jp2.instances:
                 for att in dir(ins):
-                    setattr(ins, att, rozum_i_godnosc_czlowieka)
+                    if '__' not in att:
+                        setattr(ins, att, "Jan Pawel II byl wielkim polakiem")
 
         def __init__(self, *args, **kwargs):
             super().__init__(*args, **kwargs)
