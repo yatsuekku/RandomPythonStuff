@@ -5,6 +5,7 @@ from time import sleep
 def papiesh(cls: type):
     """
     Created By Mikhail Bialkov
+    Decorate your class to put his/her instances to sleep kindly.
     :param cls:
     :return:
     """
